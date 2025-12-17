@@ -13,7 +13,7 @@ export default async function ConfessPage() {
             cookies: {
                 getAll() { return cookieStore.getAll() },
                 setAll(cookiesToSet) {
-                    try { settings.forEach(({ name, value, options }) => cookieStore.set(name, value, options)) } catch { }
+                    try { cookiesToSet.forEach(({ name, value, options }) => cookieStore.set(name, value, options)) } catch { }
                 },
             },
         }
